@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //operadores tem o poder de dar instruçoes de operaçao aos valores presentes no js, em uma variavel o sinal de "=" é um operador de ASSIGNMENT, instruindo nosso client para armazenar determinado valor em uma variavel 
+        // var nome = "Fernanda Sabino"
+        //O operador de atribuiçao '=' está instruido ao client que a string "Fernanda Sabino" deve ser armazenada na variavel 'nome'
+        // Tipos de operadores...
+        //atribuiçao: ( =, *=, /=, %=, +=, -=, <<=, >>=, &=, ^=, |= )
+        //comparaçao: ( <, <=, >, >=, =, <> )
+        //aritmeticos: ( +, -, *, /, **, % )
+        //bit a bit: ( AND - a & b, OR - a | b, XOR - a ^ b, NOT ~ a )
+        //lógicos: (! - Negação(NOT), && - E(AND),|| - OU(OR) )
+        //relacionarios: ( == - Igualdade, != - Desigualdade, < - Menor, <= - Menor ou igual, > - Maior, >= - Maior ou igual )
+
+
+        //precedencia e associatividade de operadores 
+        //a precedencia de operadores determina a ordem em que os operadores sao processados. Operadores com maior precedencia sao processados primeiro 
+        // 3 + 4 * 5 → executa primeiro 5 * 4 = 20 + 3 = 23 
+        //sempre que tiver parenteses sera executado primeiro, n importa o operador 
+
+        const altura = 1.67
+        var nome = "Fernanda"
+        var idade = 31
+
+        //ESSE CODIGO DARIA FALSO NO CONSOLE POIS 31 + 4 + 10 = 45 NAO É MAIOR QUE 50 
+        if ( (idade + 4 ) + 10 > 50 ) {
+            console.log('verdadeiro')
+        }else {
+            console.log('Falso')
+        }
+
+        //ESSE CODIGO DARIA FALSO NO CONSOLE POIS 50 + 10 = 60  AND 31 + 10 = 41, COMO NA SEGUNDA CONTA O RESULTADO É 41, LOGO NAO É MAIOR QUE 50 
+        if (( 50 + 10 && idade + 10 ) >50 ){
+            console.log('verdadeiro')
+        }else {
+            console.log('Falso')
+        }
+
+        //ESSE CODIGO DARIA VERDDEITRA NO CONSOLE POIS 50 + 10 = 60 AND 31 + 20 = 51, LOGO AS DUAS CONTAS DANDO RESULTADO MAIOR QUE 50 
+        if (( 50 + 10 && idade + 20 ) >50 ){
+            console.log('verdadeiro')
+        }else {
+            console.log('Falso')
+        }
+
+
+    </script>
+
+</body>
+</html>
