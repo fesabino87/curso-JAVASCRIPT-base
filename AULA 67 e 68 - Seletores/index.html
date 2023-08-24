@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS Selector e CSS </title>
+
+    <style>
+        h1 {
+      width: 300px;
+      height: 50px;
+      margin: 15px auto;
+      display: block;
+      background-color: #f2f2f2;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      line-height: 50px;
+    }
+
+    .my-buttons {
+      width: 300px;
+      height: 50px;
+      margin: 15px auto;
+      display: block;
+    }
+
+    .my-buttons button {
+      width: 50%;
+      height: 40px;
+      float: left;
+    }   
+    </style>
+
+</head>
+
+<body style="text-align: center; margin-top: 100px;">
+    <h1 class="item-azul">Azul 1</h1>
+    <h1 class="item-azul">Azul 2</h1>
+    <h1 class="item-azul">Azul 3</h1>
+  
+    <h1 class="item-vermelho">Vermelho 1</h1>
+    <h1 class="item-vermelho">Vermelho 2</h1>
+    <h1 class="item-vermelho">Vermelho 3</h1>
+  
+    <div class="my-buttons">
+      <button onclick="facaAzul()">Azuis</button>
+      <button onclick="facaVermelho()">Vermelhos</button>
+    </div>
+
+    <script>
+
+    //SELECTORS - selecionando elementos individualmente 
+    // Selector por ID: document.getElementById('meu-item-id') o get element sempre vai puxar o primeiro elemento com a classe/id, para puxar todos tem que ser getEelementByClassName
+    // Selector por Query: document.querySelector('.meu-item-class') o query selector sempre vai puxar o primeiro elemento com a classe/id, para puxar todos tem que ser querySelectorAll
+    
+    //com esse codigo ira aparecer no console apenas Azul 1, pois o query esta puxando apenas a primeira classe
+    //var azul = document.querySelector('.item-azul')
+    //console.log(azul)
+
+    //ja nesse codigo, por conta do All ira aparecer no console todas as classes, porem em forma de array, que é considerado uma "lista"
+    //var azul = document.querySelectorAll('.item-azul')
+    //console.log(azul)
+    
+    //se voce quer que retorne apenas um elemento de um array basta adicionar um colchete [] com o numero dentro, ex: console.log(azul[1])
+    //var azul = document.querySelectorAll('.item-azul')
+    //console.log(azul[1])
+
+    // esse codigo serve para quando apertar o botao vermelho as letras vermelho 1,2 e 3 ficaram vermelhas e o axul a mesma coisa mas ficarem da cor azul 
+    var azul = document.querySelectorAll('.item-azul')
+
+    var vermelho = document.querySelectorAll('.item-vermelho')
+
+        function facaAzul (){
+          var i = 0 
+          //for: é um looping, ele pede 3 parametros separados por ponto e virgula
+          //length vai determinar quantos itens tem no "azul"
+          //enquanto azul.length 3 é maior que i = 0 acrescente mais 1 no i 
+          for(i = 0; azul.length > i; i++ ) {
+          //cada vez que odar o looping o i vai aumentar um numero 
+            azul[i].style.color = "blue"
+          }
+          document.body.style.backgroundColor = 'blue'
+        }
+         
+          //a mesma logica para o vermelho
+        function facaVermelho () {
+          var i = 0
+          for(i = 0; vermelho.length > i; i++) {
+            vermelho[i].style.color = "red"
+          }
+          document.body.style.backgroundColor = 'red'
+        }
+
+        //leenghth
+
+
+    </script>
+
+</body>
+</html>
