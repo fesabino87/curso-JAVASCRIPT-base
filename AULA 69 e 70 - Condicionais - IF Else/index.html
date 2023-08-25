@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+          box-sizing: border-box;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    
+        .box {
+          width: 600px;
+          height: 200px;
+          display: table;
+          padding: 30px;
+          margin: 60px auto 0 auto;
+          background-color: indigo;
+        }
+    
+        .form-field {
+          width: 100%;
+          display: table;
+          position: relative;
+          margin-bottom: 15px;
+        }
+    
+        .form-field input {
+          width: 100%;
+          height: 40px;
+          background-color: #fff;
+          border-radius: 4px;
+          border: none;
+          margin-bottom: 30px;
+          text-indent: 10px;
+        }
+    
+    
+        .form-field span {
+          opacity: 0;
+          transition: all 0.3s ease-out;
+        }
+    
+        .error {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          bottom: 0;
+          line-height: 34px;
+          padding-left: 15px;
+          height: 34px;
+          color: #fff;
+          background: red;
+          display: block;
+          opacity: 1 !important;
+        }
+    
+        .success {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          bottom: 0;
+          line-height: 34px;
+          padding-left: 15px;
+          height: 34px;
+          color: #fff;
+          background: green;
+          display: block;
+          opacity: 1 !important;
+        }
+    
+        .validate {
+          width: 600px;
+          display: table;
+          margin: 0 auto;
+          height: 60px;
+          border: none;
+          font-size: 21px;
+          color: indigo;
+          background-color: mediumspringgreen;
+          cursor: pointer;
+        }
+    
+        .validate:hover {
+          color: palegreen;
+          background-color: mediumvioletred;
+        }
+      </style>
+
+</head>
+<body>
+    <div class="box">
+        <form class="my-form">
+    
+          <div class="form-field" id="form-field-nome">
+            <input type="text" id="nome" placeholder="Seu Nome">
+            <span></span>
+          </div>
+    
+          <div class="form-field" id="form-field-email">
+            <input type="email" id="email" placeholder="Seu Email">
+            <span></span>
+          </div>
+    
+        </form>
+      </div>
+      </div>
+      <button class="validate" onclick="validaForm()">VALIDAR</button>
+
+    <script>
+    //IF - ELSE
+    // a condicional if é uma estrutura condicionada que executa o que é descrito dentro do bloco caso determinada condiçao for verdadeira. se for falsa, executa o bloco else.
+    //exemplo if
+
+    /*
+    if (condiçao){
+        Executev algo se a funçao for verdadeira (true)
+    }
+    */
+
+    //exemplo else
+
+    /*
+    if (condiçao){
+        execute algo se a funçao for verdadeira (true)
+    } else {
+        execute algo se a funçao for falsa (false)
+    }
+    */
+
+    //exercicio - validaçao de formulartio: no client side (front end), nao é o jeito certo de fazer
+    
+    //"var isEmail" é uma expressao regular que chama Regex, ela checa se é um email é valido  
+    //serve para fazer uma verificaçao se a string testada atende a determinadas regras de texto, essa especifica é para email
+    
+    var isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var fieldNome = document.getElementById('nome')
+    var fieldEmail = document.getElementById('email')
+
+    function validaForm() {
+        var nomeStr = fieldNome.value 
+        var emailStr = fieldEmail.value
+        var wrapperNome = document.getElementById('form-field-nome')
+        var wrapperEmail = document.getElementById('form-field-email')
+
+        //validaçao nome
+        if(nomeStr.length > 0 && nomeStr.length >= 3){
+            wrapperNome.querySelector('span').classList.add('sucess')
+            wrapperNome.querySelector('span').innerText = "nome validado com sucesso"
+        } else {
+            wrapperNome.querySelector('span').classList.add('error')
+            wrapperNome.querySelector('span').innerText = "informaçao invalida"
+        }
+
+        //validaçao email 
+        if(isEmail.test(emailStr)){
+            wrapperEmail.querySelector('span').classList.add('sucess')
+            wrapperEmail.querySelector('span').innerText = "email validado com sucesso"
+
+        }else {
+            wrapperEmail.querySelector('span').classList.add('error')
+            wrapperEmail.querySelector('span').innerText = "email invalido"
+        }
+    }
+
+
+    </script>
+=
+</body>
+</html>
