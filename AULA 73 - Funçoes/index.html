@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box {
+            width: 450px;
+            height: 200px;
+            display: block;
+            margin: 60px auto;
+            background-color: indigo;
+            color: mediumaquamarine;
+            text-align: center;
+            line-height: 200px;
+            font-size: 41px;
+            font-family: monospace;
+            font-weight: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+    </style>
+</head>
+<body>
+
+        <div class="box" id="box"> </div>
+
+    <script>
+        //FUNÇOES 
+        //executando tarefas sob demanda 
+        //uma funçao é um bloco de có digo que executa uma tarefa(rotina).
+        // A funçao geralmente recebe um valor (argumento), transforma este valor internamente e devolve(retorna) um novo valor.
+        /*
+        nome da funçao     parametros     tarefas e retorno
+               ↓               ↓                  ↓
+        function meuNome  (arg1, arg2)    {return arg1+arg2}
+        const meuNome = (arg1, arg2) => {return arg1+arg2}
+        //invocando a funçao
+        meuNome("Fernanda", "Sabino")
+        */
+        /* 
+        //EXEMPLO FUNÇAO PEDICO CAPUCCINO                                                                                 __________________
+                                                                      _______________________________________________    | PEDIDO CAPUCCINO |
+                     ARGUMENTOS/ PARAMETROS (o que é requerido )     |   TAREFA 1   |   TAREFA 2    |    TAREFA 3    |   |                  |
+                       ↓          ↓          ↓            ↓          |  verifica o  |  verifica os  |coloca tudo num |   | tamanho: grande  |
+        parametros: tamanho |  Leite  |  chocolate  |  chantily |    |  tamanho do  | ingredientes  |layout e RETORNA|   | leite: sim       |
+                       ↓          ↓          ↓            ↓          |   capuccino  |que serao todos|opedido final no|   | chocolate: sim   | 
+        argumentos: grande  |   true  |    true     |   false   |  → | que é GRANDE | MENOS chantily| frmato desejado| → |chantily: nao     |
+                                                                     |______________|_______________|________________|   |                  |
+                                                                                                                         |TOTAL: 12,00      |
+                                                                                                                         |__________________|
+        */
+
+        var myBox = document.getElementById('box');
+
+        function myInfo(x, y, z ) {
+
+            var myCalc = x + y + z
+            
+            myBox.append(myCalc)
+        }
+
+        //myInfo (5, 10, 15)
+
+        myInfo ('Fernanda', 'Programmer', 'JS')
+         
+
+
+
+    </script>
+</body>
+</html>
